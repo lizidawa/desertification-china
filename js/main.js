@@ -884,7 +884,7 @@ function toggleHero(el) {
             var h = canvas.height;
             // 沙粒粒子
             ggSandParticles = [];
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i < 80; i++) {
                 ggSandParticles.push({
                     x: Math.random() * w, y: h * 0.55 + Math.random() * h * 0.4,
                     size: Math.random() * 3.5 + 0.8, speedX: Math.random() * 3 + 0.3,
@@ -1545,7 +1545,7 @@ function toggleHero(el) {
             let cw = window.innerWidth, ch = window.innerHeight;
             canvas.width = cw; canvas.height = ch;
             const pts = [];
-            const count = isMobile ? 50 : (window.innerWidth < 768 ? 90 : 200);
+            const count = isMobile ? 30 : (window.innerWidth < 768 ? 50 : 80);
             const colors = ['46,204,113','241,196,15','6,182,212','139,92,246','255,255,255'];
             for (let i = 0; i < count; i++) {
                 pts.push({ x: Math.random() * cw, y: Math.random() * ch, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8, s: Math.random() * 3 + 0.5, op: Math.random() * 0.4 + 0.1, c: colors[Math.floor(Math.random() * colors.length)] });
