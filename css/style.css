@@ -1,3 +1,84 @@
+/* === Background Tree Vegetation Decorations === */
+.bg-trees-layer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.bg-tree {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+.bg-tree.visible { opacity: 1; }
+.bg-tree--poplar { opacity: 0.07; }
+.bg-tree--pine { opacity: 0.06; }
+.bg-tree--shrub { opacity: 0.05; }
+.bg-tree--willow { opacity: 0.055; }
+.bg-tree--saxaul { opacity: 0.065; }
+
+/* Subtle sway animation */
+@keyframes treeSway {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    25% { transform: rotate(0.5deg) translateX(2px); }
+    75% { transform: rotate(-0.5deg) translateX(-2px); }
+}
+.bg-tree svg {
+    animation: treeSway 8s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+.bg-tree:nth-child(even) svg {
+    animation-duration: 10s;
+    animation-delay: -2s;
+}
+.bg-tree:nth-child(3n) svg {
+    animation-duration: 12s;
+    animation-delay: -4s;
+}
+
+/* Section tree decorations */
+.section-trees {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+.section-trees svg {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Hero section additional vegetation overlay */
+.p-hero .veg-overlay {
+    position: absolute;
+    bottom: -5%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, rgba(20,50,30,0.15), transparent);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Desert section vegetation strip */
+.vegetation-strip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
 /* === Style block 1 (from line ~31) === */
 * { margin: 0; padding: 0; box-sizing: border-box; }
         /* Performance: GPU acceleration for animated elements */
